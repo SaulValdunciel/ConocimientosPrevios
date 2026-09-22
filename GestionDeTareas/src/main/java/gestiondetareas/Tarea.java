@@ -16,8 +16,11 @@ public class Tarea {
     public static void main(String[] args) {
         Scanner teclado = new Scanner (System.in);
         int opcion =0;
+        GestorTareas tareas = new GestorTareas();
         
-        do {
+        try{
+            
+            do {
             System.out.println("1. Registrar nueva tarea");
             System.out.println("2. Marcar tarea como completada");
             System.out.println("3. Listar las tareas");
@@ -31,20 +34,23 @@ public class Tarea {
                 case 1 -> {
                     System.out.println("Dime el nombre de la tarea para registrar:");
                     tarea = teclado.nextLine();
+                    tareas.registrarTarea(tarea);
                 }
                 case 2 -> {
                     System.out.println("Dime el nombre de la tarea para completar:");
                     tarea = teclado.nextLine();
+                    tareas.marcarTarea(tarea);
                 }
                 case 3 -> {
-                    //llamar metodo listar tarea
+                    tareas.listarTareas();
                 }
                 case 4 -> {
                     System.out.println("Dime el nombre de la tarea que quieres eliminar:");
                     tarea = teclado.nextLine();
+                    tareas.eliminarTareas(tarea);
                 }
-                case 5 -> {
-                    System.out.println("Saliendo...");
+                case 0 -> {
+                   System.out.println("Saliendo...");
                 }
                 default -> {
                     System.out.println("Opcion no valida");
@@ -52,6 +58,10 @@ public class Tarea {
             }
             
         } while (opcion!=0);
+            
+        } catch (NullPointerException e) {
+            System.out.println("Erro");
+        }
         
         
     }
