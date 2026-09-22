@@ -63,6 +63,6 @@ public class Tarea {
             System.out.println("Erro");
         }
         
-        
+        teclado.close();
     }
 }
