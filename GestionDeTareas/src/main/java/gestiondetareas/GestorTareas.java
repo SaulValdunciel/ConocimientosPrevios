@@ -14,12 +14,12 @@ public class GestorTareas {
     
     
     
-    public void registrarTarea(){
+    public void registrarTarea(String tarea){
        
         
     }
     
-    public void marcarTarea(){
+    public void marcarTarea(String tarea){
         
     }
     
@@ -27,7 +27,7 @@ public class GestorTareas {
         
     }
     
-    public void eliminarTareas(){
+    public void eliminarTareas(String tarea){
         
     }
 }
